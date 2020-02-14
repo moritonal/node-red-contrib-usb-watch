@@ -1,0 +1,49 @@
+<script type="text/javascript">
+
+    RED.nodes.registerType('usb-watch', {
+        category: 'usb',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            initialScan: { value: false }
+        },
+        inputs: 0,
+        outputs: 2,
+        icon: "inject.png",
+        label: function() {
+            return this.name || "usb watch";
+        },
+        outputLabels:["Added", "Removed"]
+    });
+</script>
+
+<script type="text/html" data-template-name="usb-watch">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-initialScan"><i class="icon-tag"></i>Initial Scan</label>
+        <input type="checkbox" style="width: 10%;" id="node-input-initialScan" placeholder="Initial Scan">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="usb-watch">
+    <p>Watches for USB hot-loading events</p>
+
+    <h3>Outputs</h3>
+     <ol class="node-ports">
+         <li>Standard output
+             <dl class="message-properties">
+                 <dt>payload <span class="property-type">json</span></dt>
+                 <dd>Added USB devices.</dd>
+             </dl>
+         </li>
+         <li>Standard error
+             <dl class="message-properties">
+                 <dt>payload <span class="property-type">json</span></dt>
+                 <dd>Removed USB devices</dd>
+             </dl>
+         </li>
+     </ol>
+</script>
