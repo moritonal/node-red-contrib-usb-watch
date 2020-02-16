@@ -1,6 +1,8 @@
 trigger:
 - master
 
+name: "Windows Release"
+
 pool:
   vmImage: 'windows-latest'
 
