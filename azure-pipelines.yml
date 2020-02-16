@@ -8,5 +8,7 @@ container: node:10
 
 steps:
 - script: |
+    apt-get update
+    apt-get install libudev-dev
     npm install
   displayName: 'npm install'
