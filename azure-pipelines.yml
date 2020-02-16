@@ -2,14 +2,16 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
 
 - task: UseNode@1
 
-- script: apt-get update && apt-get install libudev-dev
-  displayName: "Setup Dependencies"
-
 - script: npm install
   displayName: 'NPM Install'
+
+- task: Npm@1
+  inputs:
+    command: 'publish'
+    publishEndpoint: 'NPM JS'
