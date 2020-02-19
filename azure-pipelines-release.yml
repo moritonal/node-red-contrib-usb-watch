@@ -1,6 +1,7 @@
 resources:
   pipelines:
   - pipeline: Build
+    source: Build
     trigger:
       branches:
         include:
