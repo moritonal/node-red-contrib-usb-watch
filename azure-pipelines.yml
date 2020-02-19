@@ -31,5 +31,9 @@ jobs:
 
   - job: Release
     condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
+    dependsOn: [ "Build" ]
     steps:
-      - pwsh: "Write Host!"
+      - task: Npm@1
+        inputs:
+          command: 'publish'
+          publishEndpoint: 'NPM JS'
