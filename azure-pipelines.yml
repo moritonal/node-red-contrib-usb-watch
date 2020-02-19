@@ -1,10 +1,8 @@
 trigger:
-  tags:
-    include:
-    - v*
   branches:
     include:
     - master
+    - refs/tags/v*
 
 name: "Windows Release"
 
