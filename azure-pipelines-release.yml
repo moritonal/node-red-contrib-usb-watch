@@ -1,7 +1,6 @@
 resources:
   pipelines:
-  - pipeline: securitylib
-    source: security-lib-ci
+  - pipeline: Build
     trigger:
       branches:
         include:
