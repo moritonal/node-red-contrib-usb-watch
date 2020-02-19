@@ -3,7 +3,11 @@
   "version": "1.0.8",
   "description": "",
   "main": "usb-watch.js",
-  "scripts": {},
+  "scripts": {
+    "release":"run-s release:*",
+    "release:bump": "npm version patch",
+    "release:push": "git push --tags origin master"
+  },
   "keywords": [
     "node-red"
   ],
@@ -16,5 +20,8 @@
   },
   "dependencies": {
     "usb-detection": "^4.7.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }
