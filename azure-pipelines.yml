@@ -6,17 +6,19 @@ name: "Windows Release"
 pool:
   vmImage: 'windows-latest'
 
-steps:
-  - task: UseNode@1
+jobs:
+  - job: Build
+    steps:
+      - task: UseNode@1
 
-  - script: npm install
-    displayName: 'NPM Install'
+      - script: npm install
+        displayName: 'NPM Install'
 
-  - pwsh: |
-      mkdir ./artifacts
-      cd ./artifacts
-      npm pack ./../
-    displayName: "Packing up"
+      - pwsh: |
+          mkdir ./artifacts
+          cd ./artifacts
+          npm pack ./../
+        displayName: "Packing up"
 
-  - publish: "./artifacts"
-    displayName: "Publishing artifacts"
+      - publish: "./artifacts"
+        displayName: "Publishing artifacts"
