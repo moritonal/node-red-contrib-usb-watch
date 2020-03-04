@@ -7,7 +7,7 @@ trigger:
     include: 
     - refs/tags/v*
 
-name: "Windows Release"
+name: "Build & Release"
 
 pool:
   vmImage: 'windows-latest'
@@ -33,9 +33,9 @@ stages:
 
   - stage: Release
     condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
+    dependsOn: [ "Build" ]
     jobs:
       - job: Release
-        dependsOn: [ "Build" ]
         steps:
           - task: Npm@1
             inputs:
