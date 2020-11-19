@@ -1,4 +1,4 @@
-# node-red-contrib-usb-watch https://img.shields.io/npm/v/node-red-contrib-usb-watch
+# node-red-contrib-usb-watch ![npm](https://img.shields.io/npm/v/node-red-contrib-usb-watch)
  Node-Red custom node for watching when a USB device is added or removed.
 
 ## Build Pipeline
